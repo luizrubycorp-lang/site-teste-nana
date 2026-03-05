@@ -3,9 +3,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import Link from 'next/link';
+import ScheduleModal from './ScheduleModal';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [openSchedule, setOpenSchedule] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,12 +38,13 @@ export default function Navbar() {
             <Link href="#contato" className="hover:text-brand-aqua transition-colors">Contato</Link>
           </div>
 
-          <Link 
-            href="https://wa.me/5543999687799"
+          <button 
+            onClick={() => setOpenSchedule(true)}
             className="bg-brand-deepblue text-white px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-brand-aqua transition-all"
           >
             Agendar
-          </Link>
+          </button>
+          <ScheduleModal open={openSchedule} onClose={() => setOpenSchedule(false)} />
         </motion.nav>
       )}
     </AnimatePresence>
