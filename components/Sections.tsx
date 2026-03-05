@@ -1,5 +1,4 @@
-
-'use client';
+"use client";
 
 import React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -16,7 +15,6 @@ const procedimentos = [
     description: '',
     fullContent: 'Melasma sinergia de 4 tipos de peelings, entre eles, o mandélico por ser o mais seguro, lasers e ativos despigmentantes para clarear o melasma.'
   },
-  // Botox card removed per request
   {
     id: 'f5',
     title: 'Limpeel',
@@ -44,8 +42,16 @@ const procedimentos = [
   
 ];
 
-// Map specific procedimento titles to files in public/images/Tratamentos faciais/
-// NOTE: directory name has spaces and capitalization: "Tratamentos faciais"
+const products = [
+  { title: 'Naturale Limpeel', description: '', image: '/images/products/p01-naturale-limpeel.jpg.jpg' },
+  { title: 'Naturale Limpeel', description: '', image: '/images/products/p02-creme-hidratante-facial.jpg.jpg' },
+  { title: 'Protetor Solar Facial', description: '', image: '/images/products/p03-protetor-solar-fps-50.jpg.jpg' },
+  { title: 'Hidra Intense', description: '', image: '/images/products/p04-tonico-equilibrante.jpg.jpg.jpg' },
+  { title: 'Protetor Solar Facial', description: '', image: '/images/products/p05-mascara-detox-argila.jpg.jpg' },
+  { title: 'Base Tonalizante', description: '', image: '/images/products/p06-oleo-corporal-relax.jpg.jpg' },
+  { title: 'Naturale Lifting', description: '', image: '/images/products/p07-serum-vitamina-c.jpg.jpg' },
+  { title: 'Rosa Mosqueta', description: '', image: '/images/products/p08-esfoliante-suave.jpg.jpg' }
+];
 const procedimentoImageMap: Record<string, string> = {
   // normalized keys (lowercase, no extra spaces)
   'prevlifting': 'Logos Tratamentos-12.jpg',
@@ -308,54 +314,6 @@ export function ProcedimentosSection() {
     </>
   );
 }
-
-const products = [
-  {
-    title: 'Naturale Limpeel',
-    description: '',
-    image: '/images/products/p01-naturale-limpeel.jpg.jpg'
-  },
-  {
-    title: 'Creme Hidratante Facial',
-    description: '',
-    image: '/images/products/p02-creme-hidratante-facial.jpg.jpg'
-  },
-  {
-    title: 'Protetor Solar FPS 50',
-    description: '',
-    image: '/images/products/p03-protetor-solar-fps-50.jpg.jpg'
-  },
-  {
-    title: 'Tônico Equilibrante',
-    description: '',
-    image: '/images/products/p04-tonico-equilibrante.jpg.jpg'
-  },
-  {
-    title: 'Máscara Detox Argila',
-    description: '',
-    image: '/images/products/p05-mascara-detox-argila.jpg.jpg'
-  },
-  {
-    title: 'Óleo Corporal Relax',
-    description: '',
-    image: '/images/products/p06-oleo-corporal-relax.jpg.jpg'
-  },
-  {
-    title: 'Sérum Vitamina C',
-    description: '',
-    image: '/images/products/p07-serum-vitamina-c.jpg.jpg'
-  },
-  {
-    title: 'Esfoliante Suave',
-    description: '',
-    image: '/images/products/p08-esfoliante-suave.jpg.jpg'
-  },
-  {
-    title: 'Máscara Noturna',
-    description: '',
-    image: 'https://picsum.photos/600/800?random=38'
-  }
-];
 
 export function ProductsSection() {
   const whatsappNumber = '5543999687799';
