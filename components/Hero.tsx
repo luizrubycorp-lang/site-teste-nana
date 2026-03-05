@@ -11,7 +11,7 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://picsum.photos/1920/1080?grayscale" // Placeholder for clinic facade
+          src={encodeURI('/images/Naturale Foto-17.jpg')}
           alt="Clínica Naturale"
           fill
           className="object-cover"
