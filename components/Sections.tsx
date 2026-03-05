@@ -16,22 +16,7 @@ const procedimentos = [
     description: '',
     fullContent: 'Melasma sinergia de 4 tipos de peelings, entre eles, o mandélico por ser o mais seguro, lasers e ativos despigmentantes para clarear o melasma.'
   },
-  {
-    id: 'f3',
-    title: 'Botox',
-    slug: 'botox',
-    image: 'https://picsum.photos/600/800?random=3',
-    description: '',
-    fullContent: 'A aplicação de toxina botulínica (Botox) é o padrão ouro para o tratamento de rugas dinâmicas. Proporciona um aspecto descansado e rejuvenescido, suavizando as linhas de expressão na testa, entre as sobrancelhas e ao redor dos olhos com total naturalidade.'
-  },
-  {
-    id: 'f3',
-    title: 'Botox',
-    slug: 'botox',
-    image: 'https://picsum.photos/600/800?random=3',
-    description: '',
-    fullContent: 'A aplicação de toxina botulínica (Botox) é o padrão ouro para o tratamento de rugas dinâmicas. Proporciona um aspecto descansado e rejuvenescido, suavizando as linhas de expressão na testa, entre as sobrancelhas e ao redor dos olhos com total naturalidade.'
-  },
+  // Botox card removed per request
   {
     id: 'f5',
     title: 'Limpeel',
@@ -56,14 +41,7 @@ const procedimentos = [
     description: '',
     fullContent: 'A técnica mais gostosa de receber, com manobras precisas e direcionadas traz o relaxamento muscular facial, previne a formação de rugas e traz extremo relaxamento. Associa-se lasers e leds para rejuvenescimento e melhora a qualidade da pele. Ideal após os 18 anos.'
   },
-  {
-    id: 'f8',
-    title: 'Zena',
-    slug: 'zena',
-    image: 'https://picsum.photos/600/800?random=53',
-    description: '',
-    fullContent: 'O protocolo Zena é uma experiência de luxo para a pele. Utilizando ativos de alta performance, ele promove uma regeneração profunda, brilho intenso e uma sensação de pele renovada e descansada.'
-  }
+  
 ];
 
 // Map specific procedimento titles to files in public/images/Tratamentos faciais/
@@ -295,47 +273,32 @@ export function ProcedimentosSection() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ type: 'spring', damping: 25, stiffness: 350 }}
-              className="relative bg-white rounded-3xl overflow-hidden max-w-2xl w-full shadow-2xl"
+              className="relative bg-[#FBFAF8] rounded-3xl overflow-hidden max-w-2xl w-full shadow-2xl"
             >
-              <div className="relative h-64 w-full">
-                { (selectedTreatment.beforeImage || selectedTreatment.afterImage) ? (
-                  <div className="grid grid-cols-2 gap-2 h-full">
-                    <div className="relative w-full h-full overflow-hidden rounded-md">
-                      <Image src={selectedTreatment.beforeImage ?? selectedTreatment.image ?? '/images/Nana-foto.jpg'} alt={`${selectedTreatment.title} - antes`} fill className="object-cover" />
-                    </div>
-                    <div className="relative w-full h-full overflow-hidden rounded-md">
-                      <Image src={selectedTreatment.afterImage ?? selectedTreatment.image ?? '/images/Nana-foto.jpg'} alt={`${selectedTreatment.title} - depois`} fill className="object-cover" />
-                    </div>
-                  </div>
-                ) : (
-                  <Image 
-                    src={selectedTreatment.image ?? '/images/Nana-foto.jpg'}
-                    alt={selectedTreatment.title}
-                    fill
-                    className="object-cover"
-                  />
-                )}
-                <button 
-                  onClick={() => setSelectedTreatment(null)}
-                  className="absolute top-6 right-6 bg-white/20 backdrop-blur-md text-white p-2 rounded-full hover:bg-white hover:text-brand-deepblue transition-all"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                </button>
-              </div>
+              <button 
+                onClick={() => setSelectedTreatment(null)}
+                aria-label="Fechar modal"
+                className="absolute top-4 right-4 bg-white text-brand-deepblue p-2 rounded-full shadow-md z-10 hover:scale-105 transition-transform"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              </button>
+
               <div className="p-8 md:p-12">
-                <h3 className="text-3xl font-serif mb-4">{selectedTreatment.title}</h3>
-                <div className="space-y-4 text-brand-deepblue/70 leading-relaxed">
-                  <p className="font-medium text-brand-deepblue">{selectedTreatment.description}</p>
-                  <p>{selectedTreatment.fullContent}</p>
-                </div>
-                <div className="mt-10">
-                  <Link 
-                    href="https://wa.me/5543999687799"
-                    target="_blank"
-                    className="inline-block bg-brand-aqua text-white px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:brightness-110 transition-all shadow-lg shadow-brand-aqua/20"
-                  >
-                    Agendar Avaliação
-                  </Link>
+                <div className="max-w-prose mx-auto">
+                  <h3 className="text-3xl font-serif mb-4 text-brand-deepblue">{selectedTreatment.title}</h3>
+                  <div className="space-y-4 text-brand-deepblue/80 leading-relaxed">
+                    <p className="font-medium text-brand-deepblue">{selectedTreatment.description}</p>
+                    <p>{selectedTreatment.fullContent}</p>
+                  </div>
+                  <div className="mt-10 flex justify-center">
+                    <Link 
+                      href="https://wa.me/5543999687799"
+                      target="_blank"
+                      className="inline-block bg-brand-aqua text-white px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest hover:brightness-110 transition-all shadow-lg shadow-brand-aqua/20"
+                    >
+                      Agendar Avaliação
+                    </Link>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -391,11 +354,6 @@ const products = [
     title: 'Máscara Noturna',
     description: '',
     image: 'https://picsum.photos/600/800?random=38'
-  },
-  {
-    title: 'Creme Contorno de Olhos',
-    description: '',
-    image: 'https://picsum.photos/600/800?random=39'
   }
 ];
 
@@ -436,7 +394,7 @@ export function ProductsSection() {
           {products.map((product) => (
             <div key={product.title} className="flex-shrink-0 px-4" style={{ width: `${100 / visibleCount}%` }}>
               <div className="max-w-4xl mx-auto">
-                <div className="relative w-full h-64 sm:h-80 md:h-96 overflow-hidden rounded-3xl mb-6 shadow-sm">
+                <div className="relative w-full h-[640px] sm:h-[840px] md:h-[980px] overflow-hidden rounded-3xl mb-6 shadow-sm">
                   <Image
                     src={product.image}
                     alt={product.title}
