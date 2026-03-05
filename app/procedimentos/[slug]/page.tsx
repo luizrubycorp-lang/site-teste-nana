@@ -70,3 +70,10 @@ export default async function ProcedimentoPage({ params }: { params: Promise<{ s
     </main>
   );
 }
+
+export async function generateStaticParams() {
+  return [
+    { slug: 'limpeza-de-pele' },
+    { slug: 'peeling-quimico' }
+  ];
+}
