@@ -165,9 +165,7 @@ export function ProcedimentosSection() {
               Combinamos tecnologia de ponta com protocolos personalizados para realçar sua beleza natural de forma única e sofisticada.
             </p>
           </div>
-          <Link href="/procedimentos" className="group flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-brand-deepblue">
-            Ver todos <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-          </Link>
+          {/* Link "Ver todos" removido conforme solicitado */}
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
