@@ -112,7 +112,6 @@ export default function Home() {
           
           <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-brand-deepblue/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-widest font-bold opacity-40">
             <p>© 2024 Naturale Estética e Skincare. Todos os direitos reservados.</p>
-            <p>Desenvolvido por AI Studio</p>
           </div>
         </footer>
       </div>
